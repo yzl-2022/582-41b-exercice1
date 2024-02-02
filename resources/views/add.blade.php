@@ -2,13 +2,13 @@
 @section('title','Contact')
 @section('content')
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url({{ asset('assets/img/contact.jpg') }})">
+        <header class="masthead" style="background-image: url({{ asset('assets/img/add.jpg') }})">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="page-heading">
-                            <h1>Contactez moi</h1>
-                            <span class="subheading">Travaillons ensemble pour faire le meilleur.</span>
+                            <h1>Créer un nouveau projet</h1>
+                            <span class="subheading">Planifier | Concevoir | Créer | Valider</span>
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Vous souhaitez me contacter ? Remplissez le formulaire ci-dessous pour m'envoyer un message et je vous répondrai dans les plus brefs délais !</p>
+                        <p>Vous avez de bonnes idées ? Commencez par faire un plan !</p>
                         <div class="my-5">
                             <!-- * * * * * * * * * * * * * * *-->
                             <!-- * * SB Forms Contact Form * *-->
@@ -29,29 +29,22 @@
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
                             @isset($data)
-                                <p><strong>Nom:</strong> {{ $data?->name }}</p>
-                                <p><strong>E-mail:</strong> {{ $data?->email }}</p>
-                                <p><strong>Télé:</strong> {{ $data?->phone }}</p>
+                                <p><strong>Type de projet:</strong> {{ $data?->type }}</p>
+                                <p><strong>Durée du projet:</strong> {{ $data?->timespan }}</p>
                                 <p><strong>Domaine d'intérêt:</strong> {{ $data?->interest }}</p>
-                                <p><strong>Message:</strong> {{ $data?->message }}</p>
+                                <p><strong>Spécifications:</strong> {{ $data?->message }}</p>
                             @else
                             <form method="post">
                                 @csrf
                                 <div class="form-floating">
-                                    <input name="name" class="form-control" id="name" type="text" placeholder="Entrez votre nom..." data-sb-validations="required" />
-                                    <label for="name">Nom</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">Un nom est requis.</div>
+                                    <input name="type" class="form-control" id="type" type="text" placeholder="Entrez le type de projet..." data-sb-validations="required" />
+                                    <label for="type">Type de projet</label>
+                                    <div class="invalid-feedback" data-sb-feedback="type:required">Un type est requis.</div>
                                 </div>
                                 <div class="form-floating">
-                                    <input name="email" class="form-control" id="email" type="email" placeholder="Entrez votre Email..." data-sb-validations="required,email" />
-                                    <label for="email">Adresse e-mail</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required">Un e-mail est requis.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email">E-mail n'est pas valide.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input name="phone" class="form-control" id="phone" type="tel" placeholder="Entrez votre numéro de téléphone..." data-sb-validations="required" />
-                                    <label for="phone">Numéro de téléphone</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">Un numéro de téléphone est requis.</div>
+                                    <input name="timespan" class="form-control" id="timespan" type="number" placeholder="Entrez la durée du projet..." data-sb-validations="required" />
+                                    <label for="timespan">Durée du projet en heures</label>
+                                    <div class="invalid-feedback" data-sb-feedback="timespan:required">Un numéro est requis.</div>
                                 </div>
                                 <div class="form-floating">
                                     <input name="interest" class="form-control" id="interest" type="text" placeholder="Entrez votre domaine d'intérêt..." data-sb-validations="required" />
@@ -59,9 +52,9 @@
                                     <div class="invalid-feedback" data-sb-feedback="interest:required">Un domaine d'intérêt est requis.</div>
                                 </div>
                                 <div class="form-floating">
-                                    <textarea name="message" class="form-control" id="message" placeholder="Entrez votre message ici..." style="height: 12rem" data-sb-validations="required"></textarea>
-                                    <label for="message">Message</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">Un message est requis.</div>
+                                    <textarea name="message" class="form-control" id="message" placeholder="Entrez votre spécifications ici..." style="height: 12rem" data-sb-validations="required"></textarea>
+                                    <label for="message">Autres spécifications</label>
+                                    <div class="invalid-feedback" data-sb-feedback="message:required">Les spécifications sont requises.</div>
                                 </div>
                                 <br />
                                 <!-- Submit success message-->
@@ -82,7 +75,7 @@
                                 <!-- an error submitting the form-->
                                 <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erreur lors de l'envoi du message !</div></div>
                                 <!-- Submit Button-->
-                                <button class="btn btn-primary text-uppercase" type="submit">Envoyer</button>
+                                <button class="btn btn-primary text-uppercase" type="submit">Créer</button>
                             </form>
                             @endisset
                         </div>
