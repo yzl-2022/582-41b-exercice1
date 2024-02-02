@@ -29,11 +29,11 @@
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
                             @isset($data)
-                                <p><strong>Nom:</strong> {{ $data?->name }}</p>
-                                <p><strong>E-mail:</strong> {{ $data?->email }}</p>
-                                <p><strong>Télé:</strong> {{ $data?->phone }}</p>
-                                <p><strong>Domaine d'intérêt:</strong> {{ $data?->interest }}</p>
-                                <p><strong>Message:</strong> {{ $data?->message }}</p>
+                                <p><strong>Nom:</strong> {{ optional($data)->name }}</p>
+                                <p><strong>E-mail:</strong> {{ optional($data)->email }}</p>
+                                <p><strong>Télé:</strong> {{ optional($data)->phone }}</p>
+                                <p><strong>Domaine d'intérêt:</strong> {{ optional($data)->interest }}</p>
+                                <p><strong>Message:</strong> {{ optional($data)->message }}</p>
                             @else
                             <form method="post">
                                 @csrf

@@ -20,7 +20,7 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="/projet/1">
+                        <a href="{{ asset('/projet/1') }}">
                             <h2 class="post-title">Quelques règles de conception de l'interface utilisateur</h2>
                             <h3 class="post-subtitle">Il est toujours utile d'avoir quelques conseils</h3>
                         </a>
@@ -34,7 +34,7 @@
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="/projet/2"><h2 class="post-title">Avantages de l'utilisation de frameworks pour le développement d'applications Web</h2></a>
+                        <a href="{{ asset('/projet/2') }}"><h2 class="post-title">Avantages de l'utilisation de frameworks pour le développement d'applications Web</h2></a>
                         <p class="post-meta">
                             Posté par
                             <a href="#!">Zele</a>
@@ -45,7 +45,7 @@
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                        <a href="/projet/3">
+                        <a href="{{ asset('/projet/3') }}">
                             <h2 class="post-title">Tendances du développement Web en 2024</h2>
                             <h3 class="post-subtitle">Voir les cheminements possibles pour le développement de carrière</h3>
                         </a>

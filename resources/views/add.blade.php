@@ -29,10 +29,10 @@
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
                             @isset($data)
-                                <p><strong>Type de projet:</strong> {{ $data?->type }}</p>
-                                <p><strong>Durée du projet:</strong> {{ $data?->timespan }}</p>
-                                <p><strong>Domaine d'intérêt:</strong> {{ $data?->interest }}</p>
-                                <p><strong>Spécifications:</strong> {{ $data?->message }}</p>
+                                <p><strong>Type de projet:</strong> {{ optional($data)->type }}</p>
+                                <p><strong>Durée du projet:</strong> {{ optional($data)->timespan }}</p>
+                                <p><strong>Domaine d'intérêt:</strong> {{ optional($data)->interest }}</p>
+                                <p><strong>Spécifications:</strong> {{ optional($data)->message }}</p>
                             @else
                             <form method="post">
                                 @csrf
